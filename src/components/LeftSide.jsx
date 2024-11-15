@@ -7,15 +7,23 @@ import Box from './custom/Box'
 
 function LeftSide(props){
 
-const {cardPaymentHandler, ussdPaymentHandler, bankPaymentHandler} = props
+const {cardPaymentHandler, 
+ussdPaymentHandler, 
+bankPaymentHandler, 
+textPaymentHandler, 
+transferPaymentHandler, 
+supportHandler, 
+reportHandler, 
+updateHandler} = props
 
     return (
     <>
     <Box width='100%'>
         <Container>
-           <Div>
+           <div>
+               <Div>
             <div>
-                <img src={Logo} width={'80px'}/>
+                <img src={Logo} width={'60px'}/>
             </div> 
             <div>
                 <h1><span>LIVING FAITH CHURCH<br />WORLDWIDE <br /> INTERNATIONAL</span></h1>
@@ -23,21 +31,26 @@ const {cardPaymentHandler, ussdPaymentHandler, bankPaymentHandler} = props
            </Div>
 
             <div> <h1>Winners Online <br />Giving Platform</h1></div>
+           </div>
 
-        <h3>GIVING OPTIONS</h3>
+        <div>
+            <h3>GIVING OPTIONS</h3>
         <div><button onClick={cardPaymentHandler} >CARD PAYMENT</button>
-        <button onClick={ussdPaymentHandler} >USSD</button> <br /> 
+        <button onClick={ussdPaymentHandler} >USSD</button>
         <button onClick={bankPaymentHandler}>BANK TRANSFER</button>
         </div>
 
         <h3>FOREX SPECIFICS</h3>
-        <div><button>TEXT TO GIVE</button><button>Bank Transfer</button></div>
+        <div>
+            <button onClick={textPaymentHandler}>TEXT TO GIVE</button>
+            <button onClick={transferPaymentHandler}>Bank Transfer</button>
+        </div>
 
         <h3>SUPPORT AND INFORMATION</h3>
-        <div><button>SUPPORT</button><button>GET REPORT</button> <br /> <button>UPDATES</button></div>
-
-        
-
+        <div><button onClick={supportHandler}>SUPPORT</button>
+        <button onClick={reportHandler}>GET REPORT</button> 
+        <button onClick={updateHandler}>UPDATES</button></div>
+        </div>
         </Container>
         </Box>
     </>
@@ -58,31 +71,32 @@ const {cardPaymentHandler, ussdPaymentHandler, bankPaymentHandler} = props
 
 
 const Container = styled.div` 
-	display:inline-block;
+	display:flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-image: url(${backgroundImage});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    padding: 5rem 1rem;
+    width: inherit;
+    padding: 10rem 2.5rem 10rem 8rem;
 
 button {
 	font-family: "Poppins", sans-serif;
-  	border: solid 1px #fff;
-    border-radius: 7px;
-    font-size: 16px;
-    margin: 0 5px 15px 0;
-    width: 10em;
-    background: none;
-    font-weight: 700;
-    margin-bottom: 15px;
-    height: 42px;
-    overflow: hidden;
     transition: 0.25s;
     cursor: pointer;
     color:white;
+    border:1px solid #fff;
+    border-radius: 7px;
+    font-size: 14px;
+    margin: 0 5px;
+    background: none;
+    font-weight: 700;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 7px 10px;
 }
 button:hover {
   color: black;
@@ -90,8 +104,8 @@ button:hover {
 }
 
 h3{
-	margin-bottom: -0.2px;
-	font-size: 10px;
+	// margin-bottom: 0.2px;
+	font-size: 18px;
 }
 
 h1{
@@ -109,9 +123,6 @@ const Div = styled.div`
     gap: 1rem;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
 }
 `
 

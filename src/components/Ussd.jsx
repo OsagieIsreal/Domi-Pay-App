@@ -8,7 +8,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Ussd = () => {
+const Ussd = (props) => {
+    const {closePage} = props
     return (
 <>
     <Container>
@@ -16,7 +17,7 @@ const Ussd = () => {
             <div>
                 <p>USSD</p>
             </div>
-            <div><button>Close <FontAwesomeIcon icon={faTimes} /></button></div>
+            <div><button  onClick={closePage}>Close <FontAwesomeIcon icon={faTimes} /></button></div>
         </header>
         <div>
             <hr style={{width: '100%'}} />
@@ -49,7 +50,7 @@ const Ussd = () => {
 
 
 const Container = styled.div` 
-    border:1px solid red;
+    border:none;
 
     header{
         display:flex;
@@ -58,13 +59,18 @@ const Container = styled.div`
         align-content: center;
         justify-content: space-between;
         align-items: center;
-
     }
+
+    label{
+        margin-top:15px;
+    }
+
     select{
             width: 500px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            margin-top: 15px;
         }
 
     button{

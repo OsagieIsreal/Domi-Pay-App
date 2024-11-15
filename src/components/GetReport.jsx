@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import  {Input} from './custom/Box'
 
 
 
 
 
-const GetReport = () => {
+const GetReport = (props) => {
+    const {closePage} = props
+
     return (
 <>
     <Container>
@@ -16,18 +19,30 @@ const GetReport = () => {
             <div>
                 <p>GetReport</p>
             </div>
-            <div><button>Close <FontAwesomeIcon icon={faTimes} /></button></div>
+            <div><button onClick={closePage}>Close <FontAwesomeIcon icon={faTimes} /></button></div>
         </header>
         <div>
             <div>
-                <p>CREDIT AND DEBIT CARDS</p>
+                <p>Please provide the email used on the platform and the requested report will be sent to thesame address</p>
             </div>
 
             <form>
             <FormGroup>
                 <div>
-                    <label for="expiryDate">Lastname</label>
-                    <input type="text" id="LastName" placeholder="Lastname" style={{maxWidth: '221.5px'}} required/>
+                    <label for="email">Email</label>
+                    <ReportInput type="email" id="email" placeholder="email"required/>
+                </div>          
+            </FormGroup>
+            <FormGroup>
+                <div>
+                    <label for="startDate">Start Date</label>
+                    <ReportInput type="text" id="StartDate" placeholder="StartDate" required/>
+                </div>          
+            </FormGroup>
+            <FormGroup>
+                <div>
+                    <label for="endDate">End Date</label>
+                    <ReportInput type="text" id="EndDate" placeholder="EndDate" required/>
                 </div>          
             </FormGroup>
             <FormGroup>
@@ -42,9 +57,6 @@ const GetReport = () => {
 
 
 const Container = styled.div` 
-    border:1px solid red;
-    position: absolute;
-    left:275.8em;
     color: #666666;
 
     header{
@@ -81,7 +93,7 @@ const FormGroup = styled.div`
             margin-bottom: 5px;
         }
         button {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             background-color: #E53935!important;
             color: white;
@@ -100,6 +112,9 @@ const FormGroup = styled.div`
             box-shadow: inset 0px 0px 5px 2px #4f1413;
         }
 
+`
+const ReportInput = styled(Input)`
+    width: 90%;
 `
 
 export default GetReport;

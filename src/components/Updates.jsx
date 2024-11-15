@@ -8,7 +8,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Updates = () => {
+const Updates = (props) => {
+        const {closePage} = props
+
     return (
 <>
     <Container>
@@ -16,7 +18,7 @@ const Updates = () => {
             <div>
                 <p>Updates</p>
             </div>
-            <div><button>Close <FontAwesomeIcon icon={faTimes} /></button></div>
+            <div><button onClick={closePage}>Close <FontAwesomeIcon icon={faTimes} /></button></div>
         </header>
         <div>
             <hr style={{width: '100%'}} />
@@ -49,9 +51,6 @@ const Updates = () => {
 
 
 const Container = styled.div` 
-    border:1px solid red;
-    position: absolute;
-    left:310.8em;
     color: #666666;
 
     header{
@@ -75,6 +74,7 @@ const Container = styled.div`
         background: none;
         border: none;
         font-size: 19px;
+        cursor:pointer;
     }
 `;
 

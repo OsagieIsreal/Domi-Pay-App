@@ -5,26 +5,49 @@ import CardPayment from '../CardPayment';
 import Ussd from '../Ussd';
 import BankTransfer from '../BankTransfer';
 import TextToGive from '../TextToGive';
-import BankTransfers from '../BankTransfers';
+import Transfers from '../Transfers';
 import Support from '../Support';
 import Updates from '../Updates';
 import GetReport from '../GetReport';
 
-function MainContentWrapper({showCardPayment, showUssdPayment, showBankPayment}){
+function MainContentWrapper({
+    showCardPayment, 
+    showUssdPayment, 
+    showBankPayment, 
+    showTextPayment, 
+    showTransferPayment, 
+    showSupport, 
+    showReport, 
+    showUpdate, 
+    // removeClosePage
+    closePage
+}){
 
     return (
     <>
-        <Container   width='45%'>
+        <Container   width='45%' >
 
         {showCardPayment &&  <CardPayment /> }
 
-        {showUssdPayment && <Ussd /> }
+        {showUssdPayment && <Ussd closePage={closePage} /> }
 
-        {showBankPayment && <BankTransfer />}
+        {showBankPayment && <BankTransfer closePage={closePage} />}
+
+        {showTextPayment && <TextToGive closePage={closePage} /> }
+
+        {showTransferPayment && <Transfers closePage={closePage} />}
+
+        {showSupport && <Support closePage={closePage} />}
+
+        {showReport && <GetReport closePage={closePage} />}
+        
+        {showUpdate && <Updates closePage={closePage} />}
+
+        {/*{removeClosePage}*/}
+
 
        
          
-
         </Container>
          
           {/*><TextToGive /><BankTransfers /><Support /><Updates /><GetReport />*/}
@@ -40,5 +63,8 @@ export default MainContentWrapper
 
 const Container = styled(Box)`
  min-heigth: 100vh;
-
+ padding: 0;
+ width:30rem;
+ position:absolute;
+ left: 42rem;
 `

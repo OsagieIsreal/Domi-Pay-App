@@ -28,12 +28,14 @@ const CardPayment = () => {
                 <Box>
                 <Label htmlFor="currency">Currency</Label>
                 <Select id="currency" style={{maxWidth: '100px'}} required>
-                <option>Currency</option>
+                <option disabled selected>Currency</option>
+                <option>Nigerian Naira</option>
+                <option>United States Dollar</option>
                 </Select>
             </Box>
             <Box>
                 <Label for="amount">Amount</Label>
-                <Input type="number" id="amount" placeholder="Enter amount" required width='36.5rem' />
+                <Input type="number" id="amount" placeholder="Enter amount" required width='6.5rem' width="20rem" />
             </Box> 
             </Box>               
             </FormGroup>
@@ -55,15 +57,15 @@ const CardPayment = () => {
             </FormGroup>
 
             <FormGroup>
-            <Box display='flex' width='100%' >
-             <Box border='1px solid red' width='47%' >
+            <Box display='flex' gap="15px">
+             <Box>
                 <Label for="cardNumber">Firstname</Label>
-                <Input type="text" id="FirstName" placeholder="Firstname" width='90%' required/>
+                <Input type="text" id="FirstName" placeholder="Firstname" max-width= '221.5px' required/>
             </Box>
 
-            <Box  border='1px solid green'  width='47%'>
+            <Box>
                 <Label for="expiryDate">Lastname</Label>
-                <Input type="text" id="LastName" placeholder="Lastname"   width='50%' required/>
+                <Input type="text" id="LastName" placeholder="Lastname" max-width= '221.5px' required/>
             </Box> 
             </Box>               
             </FormGroup>
@@ -72,12 +74,12 @@ const CardPayment = () => {
             <div style={{display: 'flex', gap: '15px'}}>
                 <div>
                 <Label for="cvv">Email</Label>
-                <Input type="Email" id="Email" placeholder="Enter Email" style={{maxWidth: '221.5px'}} required/>
+                <Input type="Email" id="Email" placeholder="Enter Email" max-width= '221.5px' required/>
               
             </div>
             <div>
                 <Label for="cvv">Phone</Label>
-                <input type="tel" id="Phone" placeholder="Phone Number" style={{maxWidth: '221.5px'}} required/>
+                <Input type="tel" id="Phone" placeholder="Phone Number" max-width= '221.5px' required/>
             </div> 
             </div>               
             </FormGroup>
@@ -97,11 +99,11 @@ const CardPayment = () => {
 };
 
 const PaymentContainer = styled.div` 
-     width: 100%;
-     padding: 2rem;
-     border: 2px solid green;
+     width: inherit;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
          color: #666666;
+         box-sizing: border-box;
+         padding:2rem;
 
       h2 {
          text-align: center;
@@ -116,6 +118,7 @@ const FormGroup = styled(Box)`
 
       
 `;
+
 
 export default CardPayment
 

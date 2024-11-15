@@ -6,10 +6,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 
+const TextToGive = (props) => {
+    const {closePage} = props
 
-
-
-const TextToGive = () => {
     return (
 <>
     <Container>
@@ -17,12 +16,12 @@ const TextToGive = () => {
             <div>
                 <p>TextToGive</p>
             </div>
-            <div><button>Close <FontAwesomeIcon icon={faTimes} /></button></div>
+            <div><button  onClick={closePage}>Close <FontAwesomeIcon icon={faTimes} /></button></div>
         </header>
         <div>
             <hr style={{width: '100%'}} />
             
-                <p>
+                <p> 
                     <span>International giving with a Visa, Mastercard, Discover or Amex card can give in USD, GBP, EUR, CAD, etc 
                     via Text-To-Give, Mobile App and Online Giving</span>
 
@@ -39,9 +38,6 @@ const TextToGive = () => {
 
 
 const Container = styled.div` 
-    border:1px solid red;
-    position: absolute;
-    left:160.8em;
     color: #666666;
 
     header{

@@ -8,7 +8,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const BankTransfer = () => {
+function BankTransfer(props){
+
+const {closePage} = props
+
     return (
 <>
     <Container>
@@ -16,7 +19,7 @@ const BankTransfer = () => {
             <div>
                 <p>BANK TRANSFER</p>
             </div>
-            <div><button>Close <FontAwesomeIcon icon={faTimes} /></button></div>
+            <div><button onClick={closePage}>Close <FontAwesomeIcon icon={faTimes} /></button></div>
         </header>
         <div>
             <hr style={{width: '100%'}} />
@@ -41,9 +44,6 @@ const BankTransfer = () => {
 
 
 const Container = styled.div` 
-    border:1px solid red;
-    // position: absolute;
-    // left:122.8em;
     color: #666666;
 
     header{

@@ -18,18 +18,26 @@ const Box = styled.div`
     left:  ${props => props.left || ""};
     right:  ${props => props.right  || ""};
     margin: ${props => props.margin  || ""};
-    margin-bottom: ${props => props.marginBottom  || ""}
-    `
+    margin-bottom: ${props => props.marginBottom  || "  "}  `
   
 
 export const Input = styled.input`
-    font-size:  ${props => props.fontSize  || "1rem"};
-    color: ${props => props.color  || "#000"};
+    font-size:  ${props => props.fontSize  || ""};
+    color: ${props => props.color  || ""};
     border:  ${props => props.border  || "1px solid #ccc"};
-    border-radius: 5px;
-    width: ${props => props.width || '100%' };
-    height: ${props => props.height || ''};
+    border-radius: ${props => props.borderRadius || "5px"};
+    width: ${props => props.width || "" };
+    height: ${props => props.height || ""};
     max-width: ${props=> props.maxw || ""};
+    padding: ${props => props.padding  || "10px"};
+    transition: ${props => props.transition || "all 0.3s ease"};
+
+    &:focus {
+        border-color: #C00;
+        box-shadow: 0 0 5px rgba(204, 0, 0, 0.5);
+        outline: none;
+    }
+
 
 `
 
@@ -51,7 +59,18 @@ export const Input = styled.input`
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+
+         &:focus {
+        border-color: #C00;
+        box-shadow: 0 0 5px rgba(204, 0, 0, 0.5);
+        outline: none;
+    }
         
 `
 export default Box
-// export {Input,  FormGroup}
+// export default {Input,  FormGroup}
+
+
+
+
+

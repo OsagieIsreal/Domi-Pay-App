@@ -104,7 +104,7 @@ button:hover {
 }
 
 h3{
-	// margin-bottom: 0.2px;
+	margin-bottom: 0.5rem;
 	font-size: 18px;
 }
 

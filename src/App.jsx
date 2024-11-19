@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import React from 'react'
 import './App.css'
 import PageWrapper from './components/layouts/PageWrapper';
-import styled from 'styled-components';
+// import Styled from 'styled-components';
 
 function App() {
   return (

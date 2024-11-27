@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,19 +29,19 @@ const GetReport = (props) => {
             <form>
             <FormGroup>
                 <div>
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <ReportInput type="email" id="email" placeholder="email"required/>
                 </div>          
             </FormGroup>
             <FormGroup>
                 <div>
-                    <label for="startDate">Start Date</label>
+                    <label htmlFor="startDate">Start Date</label>
                     <ReportInput type="text" id="StartDate" placeholder="StartDate" required/>
                 </div>          
             </FormGroup>
             <FormGroup>
                 <div>
-                    <label for="endDate">End Date</label>
+                    <label htmlFor="endDate">End Date</label>
                     <ReportInput type="text" id="EndDate" placeholder="EndDate" required/>
                 </div>          
             </FormGroup>
@@ -58,6 +58,7 @@ const GetReport = (props) => {
 
 const Container = styled.div` 
     color: #666666;
+    padding: 2rem;
 
     header{
         display:flex;
@@ -69,7 +70,7 @@ const Container = styled.div`
 
     }
     select{
-            width: 500px;
+            width: 31rem;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -86,32 +87,31 @@ const Container = styled.div`
 `;
 
 const FormGroup = styled.div`
-     margin-bottom: 15px;
+  margin-bottom: 15px;
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        button {
-            width: 90%;
-            padding: 10px;
-            background-color: #E53935!important;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            // box-shadow: 0 5px #0056b3;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.75, 0.12, 0, 1.14);
-        }
-        button:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-        }
-        button:active { 
-            box-shadow: inset 0px 0px 5px 2px #4f1413;
-        }
-
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  button {
+    width: 90%;
+    padding: 10px;
+    background-color: #e53935 !important;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.75, 0.12, 0, 1.14);
+    ${'' /* box-shadow: inset 0px 0px 5px 2px #a20707; */}
+  }
+  button:hover {
+    background-color: #218838;
+    box-shadow: 0 0 5px #0056b3;
+    transform: translateY(-2px);
+  }
+  button:active {
+    box-shadow: inset 0px 0px 5px 2px #a20707;
+  }
 `
 const ReportInput = styled(Input)`
     width: 90%;

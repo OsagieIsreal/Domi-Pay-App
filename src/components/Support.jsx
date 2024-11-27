@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -42,8 +42,7 @@ const Support = (props) => {
 
 const Container = styled.div` 
     color: #666666;
-    width:30em;
-
+    padding: 2rem;
     header{
         display:flex;
         flex-direction: row;

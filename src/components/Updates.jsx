@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +12,7 @@ const Updates = (props) => {
         const {closePage} = props
 
     return (
-<>
+<div>
     <Container>
         <header>
             <div>
@@ -23,7 +23,7 @@ const Updates = (props) => {
         <div>
             <hr style={{width: '100%'}} />
             
-                <label for="ussd">Select from the option below to view details</label><br />
+                <label htmlFor="ussd">Select from the option below to view details</label><br />
                 <select  id="ussd">
                     <option disabled selected>Select ussd type</option>
                     <option value="0">Access Bank USSD</option>
@@ -45,13 +45,14 @@ const Updates = (props) => {
             
         </div>
     </Container>
-</>
+</div>
     );
 };
 
 
 const Container = styled.div` 
     color: #666666;
+    padding: 2rem;
 
     header{
         display:flex;
@@ -63,7 +64,8 @@ const Container = styled.div`
 
     }
     select{
-            width: 500px;
+            margin-top: 15px;
+            width: 31rem;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;

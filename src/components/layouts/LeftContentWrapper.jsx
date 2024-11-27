@@ -1,7 +1,9 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import Box from '../custom/Box'
 import LeftSide from '../LeftSide';
+import { media } from '../../theme'
+import PropTypes from 'prop-types'
 
 
 const LeftContentWrapper = (props) => {
@@ -16,7 +18,7 @@ const LeftContentWrapper = (props) => {
     // closePage
 } = props
     return (
-    <>
+    <div>
         <Container   width='45%'  height='100vh'>
          <LeftSide 
          cardPaymentHandler={cardPaymentHandler} 
@@ -33,7 +35,7 @@ const LeftContentWrapper = (props) => {
          
 
         
-    </>
+    </div>
     );
 };
 
@@ -42,8 +44,28 @@ const LeftContentWrapper = (props) => {
 export default LeftContentWrapper
 
 const Container = styled(Box)`
- min-heigth: 100vh;
- width:33rem;
- padding: 0;
+  min-heigth: 100vh;
+  width: 100%;
+  padding: 0;
+  ${'' /* background-color: red; */}
 
+  ${media.lt`
+    width: 100%;
+    height: 100vh;
+  `}
+  ${media.md`
+    width: 100%;
+    height: 100vh;
+  `}
 `
+
+LeftContentWrapper.propTypes = {
+  cardPaymentHandler: PropTypes.func,
+  ussdPaymentHandler: PropTypes.func,
+  bankPaymentHandler: PropTypes.func,
+  textPaymentHandler: PropTypes.func,
+  transferPaymentHandler: PropTypes.func,
+  supportHandler: PropTypes.func,
+  reportHandler: PropTypes.func,
+  updateHandler: PropTypes.func,
+}

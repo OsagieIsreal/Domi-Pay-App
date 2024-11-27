@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import Box from '../custom/Box'
 import CardPayment from '../CardPayment';
@@ -9,8 +9,26 @@ import Transfers from '../Transfers';
 import Support from '../Support';
 import Updates from '../Updates';
 import GetReport from '../GetReport';
+import { media } from '../../theme'
 
-function MainContentWrapper({
+
+import PropTypes from 'prop-types'
+
+MainContentWrapper.propTypes = {
+  showCardPayment: PropTypes.bool,
+  showUssdPayment: PropTypes.bool,
+  showBankPayment: PropTypes.bool,
+  showTextPayment: PropTypes.bool,
+  showTransferPayment: PropTypes.bool,
+  showSupport: PropTypes.bool,
+  showReport: PropTypes.bool,
+  showUpdate: PropTypes.bool,
+  
+  closePage: PropTypes.func.isRequired,
+}
+
+
+function MainContentWrapper({ 
     showCardPayment, 
     showUssdPayment, 
     showBankPayment, 
@@ -19,52 +37,53 @@ function MainContentWrapper({
     showSupport, 
     showReport, 
     showUpdate, 
-    // removeClosePage
-    closePage
-}){
+    closePage }){
+      // removeClosePage
 
-    return (
-    <>
-        <Container   width='45%' >
+      return (
+        <>
+          <Container width='45%'>
+            {showCardPayment && <CardPayment />}
 
-        {showCardPayment &&  <CardPayment /> }
+            {showUssdPayment && <Ussd closePage={closePage} />}
 
-        {showUssdPayment && <Ussd closePage={closePage} /> }
+            {showBankPayment && <BankTransfer closePage={closePage} />}
 
-        {showBankPayment && <BankTransfer closePage={closePage} />}
+            {showTextPayment && <TextToGive closePage={closePage} />}
 
-        {showTextPayment && <TextToGive closePage={closePage} /> }
+            {showTransferPayment && <Transfers closePage={closePage} />}
 
-        {showTransferPayment && <Transfers closePage={closePage} />}
+            {showSupport && <Support closePage={closePage} />}
 
-        {showSupport && <Support closePage={closePage} />}
+            {showReport && <GetReport closePage={closePage} />}
 
-        {showReport && <GetReport closePage={closePage} />}
-        
-        {showUpdate && <Updates closePage={closePage} />}
+            {showUpdate && <Updates closePage={closePage} />}
 
-        {/*{removeClosePage}*/}
+            {/*{removeClosePage}*/}
+          </Container>
 
-
-       
-         
-        </Container>
-         
           {/*><TextToGive /><BankTransfers /><Support /><Updates /><GetReport />*/}
-
-        
-    </>
-    );
-};
+        </>
+      )
+    };
 
 
 
 export default MainContentWrapper
 
 const Container = styled(Box)`
- min-heigth: 100vh;
- padding: 0;
- width:30rem;
- position:absolute;
- left: 42rem;
+  min-heigth: 100vh;
+  padding: 0;
+  width: 35rem;
+  position: absolute;
+  left: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #666666;
+  box-sizing: border-box;
+  ${'' /* padding: 2rem; */}
+
+  ${media.lt`
+   display: none;
+  `}
 `
+

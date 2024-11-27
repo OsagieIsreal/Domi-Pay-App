@@ -51,6 +51,7 @@ const Ussd = (props) => {
 
 const Container = styled.div` 
     border:none;
+    padding:2rem;
 
     header{
         display:flex;
@@ -66,7 +67,7 @@ const Container = styled.div`
     }
 
     select{
-            width: 500px;
+            width: 31rem;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;

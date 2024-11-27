@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import styled from 'styled-components';
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { media } from '../theme';
 
 
 
@@ -13,7 +12,7 @@ function BankTransfer(props){
 const {closePage} = props
 
     return (
-<>
+<div>
     <Container>
         <header>
             <div>
@@ -24,7 +23,7 @@ const {closePage} = props
         <div>
             <hr style={{width: '100%'}} />
             
-                <label for="ussd">Select from the option below to view details</label><br />
+                <label htmlFor="ussd">Select from the option below to view details</label><br />
                 <select  id="ussd">
                     <option disabled selected>Select ussd type</option>
                     <option value="0">Kingdom Care Covenant (Humanitarian Service)</option>
@@ -38,13 +37,18 @@ const {closePage} = props
             
         </div>
     </Container>
-</>
+</div>
     );
 };
 
 
 const Container = styled.div` 
     color: #666666;
+    padding: 2rem;
+
+    ${media.lt`
+        display: block;
+    `}
 
     header{
         display:flex;
@@ -56,7 +60,8 @@ const Container = styled.div`
 
     }
     select{
-            width: 500px;
+            margin-top: 15px;
+            width: 31rem;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;

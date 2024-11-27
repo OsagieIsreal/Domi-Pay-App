@@ -46,7 +46,7 @@ const CardPayment = () => {
  
 
   return (
-    <>
+    <div>
       <PaymentContainer>
         <h2>Card Payment</h2>
         <form action='' onSubmit={submitHandler}>
@@ -208,7 +208,7 @@ const CardPayment = () => {
           </FormGroup>
         </form>
       </PaymentContainer>
-    </>
+    </div>
   )
 }
 

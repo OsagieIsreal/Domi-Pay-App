@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import styled from 'styled-components';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -39,6 +39,7 @@ const TextToGive = (props) => {
 
 const Container = styled.div` 
     color: #666666;
+    padding: 2rem;
 
     header{
         display:flex;
@@ -49,12 +50,13 @@ const Container = styled.div`
         align-items: center;
 
     }
-    select{
-            width: 500px;
+    ${'' /* select{
+            margin-top: 15px;
+            width: 25rem;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-        }
+        } */}
 
     button{
         color:red;
@@ -74,9 +76,9 @@ const Container = styled.div`
         font-size:10px;
     }
 
-    p{
+    ${'' /* p{
         width:500px
-    }
+    } */}
 
     span{
         display:block;
